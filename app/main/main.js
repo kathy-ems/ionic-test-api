@@ -21,7 +21,7 @@ angular.module('main', [
         views: {
           'tab-list': {
             templateUrl: 'main/templates/list.html',
-            // controller: 'SomeCtrl as ctrl'
+            controller: 'ListCtrl as ctrl'
           }
         }
       })
