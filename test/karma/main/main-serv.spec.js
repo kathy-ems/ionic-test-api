@@ -26,4 +26,23 @@ describe('module: main, service: Main', function () {
     });
   });
 
+  describe('.getListData()', function () {
+    var listData;
+    var ExpectedFirstDataPoint = {
+      'userId': 1,
+      'id': 1,
+      'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+      'body': 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto'
+    };
+
+    beforeEach(function () {
+      listData = Main.getListData();
+    });
+
+    it('should return an array of list objects', function () {
+      var firstDataPoint = listData[0];
+      expect(firstDataPoint).toEqual(ExpectedFirstDataPoint);
+    });
+  });
+
 });

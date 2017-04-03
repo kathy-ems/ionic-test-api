@@ -108,6 +108,10 @@ angular.module('main')
     }
   ];
 
+  this.getListData = function () {
+    return this.listData;
+  };
+
   this.changeBriefly = function () {
     var initialValue = this.someData.binding;
     this.someData.binding = 'Yeah this was changed';

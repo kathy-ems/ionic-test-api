@@ -1,7 +1,30 @@
 # Ionic Test API
+An app built on cordova Ionic v1 that serves up API data from https://jsonplaceholder.typicode.com. Complete with Jasmine Karma and Protactor tests.
+
+## Getting started
+Install the following:
+- npm
+- Node - Ensure latest version of node is installed `v6.10.1` for running protractor tests ([nvm](https://github.com/creationix/nvm) can manage node versions)
+- gulp `npm install --global gulp`
+- bower `npm install --global bower`
+
+
+## To Run app
+Download the repo and inside the repo run
+`npm install`
+`gulp watch`
+
+## To run tests
+`gulp karma` for front end unit tests with jasmine
+Stop `gulp watch` server and run `gulp protractor` for end to end tests
+
+## Troubleshooting
+- To run protractor, you have to have the latest version of node + the latest version of [JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+# About Generator-M-Ionic v1.11.0
 This project was generated with Generator-M-Ionic v1.11.0. For more info visit the [repository](https://github.com/mwaylabs/generator-m-ionic) or check out the README below.
 
-# Generator-M-Ionic v1.11.0
+## Generator-M-Ionic v1.11.0
 
 [![NPM version](http://img.shields.io/npm/v/generator-m-ionic.svg?style=flat-square)][npm-url]
 [![Coverage Status](http://img.shields.io/coveralls/mwaylabs/generator-m-ionic/master.svg?style=flat-square)][coveralls-url]

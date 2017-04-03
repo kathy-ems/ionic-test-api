@@ -1,5 +1,5 @@
 {
-  "name": "Ionic Test API",
+  "name": "IonicTestAPI",
   "version": "0.0.1",
   "description": "Ionic v1 app connecting to a test API",
   "private": true,
@@ -66,6 +66,7 @@
     "proxy-middleware": "^0.15.0",
     "require-dir": "^0.3.0",
     "vinyl-paths": "^2.0.0",
+    "webdriver-manager": "^12.0.4",
     "wiredep": "^4.0.0",
     "xml2js": "^0.4.9",
     "yeoman-test": "^1.1.0"
@@ -82,5 +83,6 @@
       }
     ]
   },
-  "author": "Kathy Ems via generator-m-ionic generator"
+  "author": "Kathy Ems via generator-m-ionic generator",
+  "dependencies": {}
 }
