@@ -10,9 +10,9 @@ describe('List page', function () {
     expect(element(by.css('.item-list')).isPresent()).toBe(true);
   });
 
-  it('should have a list of 16 items', function () {
+  it('should have a list of 100 items', function () {
     var items = element.all(by.repeater('listItem in ctrl.listData'));
-    expect(items.count()).toEqual(16);
+    expect(items.count()).toEqual(100);
   });
 
   it('should have a list containing titles', function () {
@@ -23,6 +23,6 @@ describe('List page', function () {
   it('should click the item and go to next page', function () {
     var item = element.all(by.repeater('listItem in ctrl.listData')).get(0);
     item.click();
-    expect(browser.getLocationAbsUrl()).toMatch('/main/list/detail');
+    expect(browser.getCurrentUrl).toMatch('/main/list/detail');
   });
 });

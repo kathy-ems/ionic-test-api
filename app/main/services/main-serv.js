@@ -14,7 +14,7 @@ angular.module('main')
 
     $http.jsonp(dataUrl + '?callback=JSON_CALLBACK')
     .success(function (response) {
-      return callback(response);
+      callback(response);
     })
     .error(function (err) {
       throw Error('JSONP ERROR!', err);
