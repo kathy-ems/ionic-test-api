@@ -1,13 +1,12 @@
-<ion-view view-title="Mr. Yo">
+<ion-view view-title="Item Detail">
   <!-- do you want padding -->
   <ion-content class="padding">
 
     <!-- content goes here -->
     <img ng-src="main/assets/images/yo@2x.png" style="width: 64px; height: 64px">
+    <h2>{{ctrl.itemData.title}}</h2>
     <p>
-      Hello My Name is Yo!<br>
-      I scaffold apps.<br>
-      And I'm really good at it.
+      {{ctrl.itemData.body}}
     </p>
 
   </ion-content>
