@@ -4,7 +4,10 @@ angular.module('main')
 
   $log.log('Hello from your Controller: ListCtrl in module main:. This is your controller:', this);
 
-  this.listData = Main.getListData();
+  Main.getListData(function (data) {
+    this.listData = data;
+  }.bind(this));
+
   this.ENV = Config.ENV;
   this.BUILD = Config.BUILD;
   // get device info

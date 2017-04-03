@@ -28,21 +28,36 @@ describe('module: main, service: Main', function () {
 
   describe('.getListData()', function () {
     var listData;
-    var ExpectedFirstDataPoint = {
+    var expectedListData = [{
       'userId': 1,
       'id': 1,
       'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
       'body': 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto'
-    };
+    }];
+    var getListDataIsCalled;
 
     beforeEach(function () {
-      listData = Main.getListData();
+      getListDataIsCalled = false;
+
+      Main.getListData = function (callback) {
+        getListDataIsCalled = true;
+        callback(expectedListData);
+      };
+    });
+
+    it('should call Main.getListData', function () {
+      var callback = jasmine.createSpy();
+      Main.getListData(callback);
+      expect(callback).toHaveBeenCalled();
     });
 
     it('should return an array of list objects', function () {
-      var firstDataPoint = listData[0];
-      expect(firstDataPoint).toEqual(ExpectedFirstDataPoint);
+      Main.getListData(function (data) {
+        listData = data;
+      });
+      expect(getListDataIsCalled).toBeTruthy;
+      expect(listData).toEqual(expectedListData);
     });
-  });
 
+  });
 });
