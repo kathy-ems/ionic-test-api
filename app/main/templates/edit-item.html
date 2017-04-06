@@ -1,0 +1,20 @@
+<ion-view view-title="Edit Item">
+  <!-- do you want padding -->
+  <ion-content class="padding">
+    <button class="button button-block button-dark"
+      ng-click="ctrl.saveItem(ctrl.itemData.title, ctrl.itemData.body)">Save</button>
+      <span ng-show="ctrl.saved">SAVED!!</span>
+      <!-- Title -->
+      <ion-item class="item item-divider">Title:</ion-item>
+        <label class="item item-input">
+          <input class="title-input" ng-model="ctrl.itemData.title" ng-change="ctrl.clearSave()">
+        </label>
+      </ion-item>
+      <!-- Body -->
+      <ion-item class="item item-divider">Body:</ion-item>
+        <label class="item item-input">
+          <input class="body-input" ng-model="ctrl.itemData.body" ng-change="ctrl.clearSave()">
+        </label>
+      </ion-item>
+  </ion-content>
+</ion-view>

@@ -39,6 +39,23 @@ angular.module('main')
     });
   };
 
+  this.saveItem = function (title, body, callback) {
+    var params = {
+      title: title,
+      body: body
+    };
+    
+    var dataUrl = apiPath + '/' + id;
+
+    $http.jsonp(dataUrl + '?callback=JSON_CALLBACK')
+    .success(function (response) {
+      callback(response);
+    })
+    .error(function (err) {
+      throw Error('JSONP ERROR!', err);
+    });
+  }
+
   this.changeBriefly = function () {
     var initialValue = this.someData.binding;
     this.someData.binding = 'Yeah this was changed';
