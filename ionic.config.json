@@ -1,0 +1,12 @@
+{
+  "name": "Typicode",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/posts",
+      "proxyUrl": "https://jsonplaceholder.typicode.com/posts"
+    }
+  ]
+}
