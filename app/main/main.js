@@ -34,6 +34,15 @@ angular.module('main', [
           }
         }
       })
+      .state('main.editItem', {
+        url: '/list/detail/:id/edit',
+        views: {
+          'tab-list': {
+            templateUrl: 'main/templates/edit-item.html',
+            controller: 'EditItemCtrl as ctrl',
+          }
+        }
+      })
       .state('main.debug', {
         url: '/debug',
         views: {
