@@ -38,7 +38,7 @@ describe('module: main, controller: ItemCtrl', function () {
 
       it('should set the id', function () {
         expect(ItemCtrl.itemData.id).toBeTruthy;
-        // expect(ItemCtrl.itemData.id).toEqual(4);
+        expect(ItemCtrl.itemData.id).toEqual(4);
       });
     });
   });
