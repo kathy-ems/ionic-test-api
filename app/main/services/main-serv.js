@@ -3,13 +3,6 @@ angular.module('main')
 .service('Main', function ($log, $timeout, $http) {
   var apiPath = 'https://jsonplaceholder.typicode.com/posts';
 
-  $log.log('Hello from your Service: Main in module main');
-
-  // some initial data
-  this.someData = {
-    binding: 'Yes! Got that databinding working'
-  };
-
   this.getListData = function (callback) {
 
     $http.jsonp(apiPath + '?callback=JSON_CALLBACK')
@@ -36,7 +29,6 @@ angular.module('main')
 
   this.getItemData = function (id, callback) {
     var dataUrl = apiPath + '/' + id;
-    console.log(dataUrl);
 
     $http.jsonp(dataUrl + '?callback=JSON_CALLBACK')
     .success(function (response) {
