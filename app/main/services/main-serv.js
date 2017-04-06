@@ -39,20 +39,20 @@ angular.module('main')
     });
   };
 
-  this.saveItem = function (title, body, callback) {
+  this.saveItem = function (id, title, body, callback) {
     var params = {
       title: title,
       body: body
-    };
-    
+    }; // if it was a real put, these would be passed
+
     var dataUrl = apiPath + '/' + id;
 
-    $http.jsonp(dataUrl + '?callback=JSON_CALLBACK')
+    $http.put(dataUrl)
     .success(function (response) {
       callback(response);
     })
     .error(function (err) {
-      throw Error('JSONP ERROR!', err);
+      throw Error('UPDATE ERROR!', err);
     });
   }
 

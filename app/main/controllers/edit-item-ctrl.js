@@ -10,10 +10,14 @@ angular.module('main')
   }.bind(this));
 
   this.saveItem = function (title, body) {
-    this.saved = true;
 
-    Main.saveItem(title, body, function (data) {
-      this.itemData = data;
+    Main.saveItem(this.id, title, body, function (data) {
+      if(data) {
+        this.saved = true;
+        this.saveMessage = 'Saved!!';
+      } else {
+        this.saveMessage = 'Not Saved';
+      }
     }.bind(this));
 
   };
