@@ -3,7 +3,7 @@
   <ion-content class="padding">
     <button class="button button-block button-dark"
       ng-click="ctrl.saveItem(ctrl.itemData.title, ctrl.itemData.body)">Save</button>
-      <span ng-show="ctrl.saved">SAVED!!</span>
+      <span ng-show="ctrl.saved">{{ctrl.saveMessage}}</span>
       <!-- Title -->
       <ion-item class="item item-divider">Title:</ion-item>
         <label class="item item-input">
