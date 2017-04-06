@@ -21,6 +21,19 @@ angular.module('main')
     });
   };
 
+  // TODO: Implement proxy server to remove CORS
+  // this.getListData = function (callback) {
+  //   var dataUrl = '/posts';
+  //
+  //   $http.get(dataUrl)
+  //   .success(function (response) {
+  //     callback(response);
+  //   })
+  //   .error(function (err) {
+  //     throw Error('ERROR!', err);
+  //   });
+  // };
+
   this.getItemData = function (id, callback) {
     var itemData = {
       'userId': 1,

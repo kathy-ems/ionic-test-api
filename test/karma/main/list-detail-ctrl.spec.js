@@ -24,9 +24,22 @@ describe('module: main, controller: ItemCtrl', function () {
       expect(Main.getItemData.calls.count()).toEqual(1);
     });
 
-    it('should set the id', function () {
-      var ItemCtrl = $controller('ItemCtrl');
-      expect(ItemCtrl.id).toBeTruthy;
+    describe('should set the id based on routeParams', function () {
+      var ItemCtrl;
+      var scope;
+
+      beforeEach(inject(function ($rootScope, $controller) {
+        scope = $rootScope.$new();
+        ItemCtrl = $controller('ItemCtrl', {
+          $scope: scope,
+          $routeParams: {id: 4}
+        });
+      }));
+
+      it('should set the id', function () {
+        expect(ItemCtrl.itemData.id).toBeTruthy;
+        // expect(ItemCtrl.itemData.id).toEqual(4);
+      });
     });
   });
 });
