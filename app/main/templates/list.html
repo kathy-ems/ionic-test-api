@@ -7,7 +7,7 @@
         class="item-remove-animate item-avatar item-icon-right"
         type="item-text-wrap"
         ng-repeat="listItem in ctrl.listData"
-        ui-sref="main.listDetail">
+        ui-sref="main.listDetail({id: {{listItem.id}}})">
         <img src="main/assets/images/yo@2x.png">
         <h2>{{listItem.title}}</h2>
         <p>Click for details...</p>

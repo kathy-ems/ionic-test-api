@@ -23,6 +23,6 @@ describe('List page', function () {
   it('should click the item and go to next page', function () {
     var item = element.all(by.repeater('listItem in ctrl.listData')).get(0);
     item.click();
-    expect(browser.getCurrentUrl).toMatch('/main/list/detail');
+    expect(browser.getCurrentUrl()).toMatch('/main/list/detail/1');
   });
 });

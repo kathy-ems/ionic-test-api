@@ -26,11 +26,11 @@ angular.module('main', [
         }
       })
       .state('main.listDetail', {
-        url: '/list/detail',
+        url: '/list/detail/:id',
         views: {
           'tab-list': {
             templateUrl: 'main/templates/list-detail.html',
-            // controller: 'SomeCtrl as ctrl'
+            controller: 'ItemCtrl as ctrl',
           }
         }
       })
