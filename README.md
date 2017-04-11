@@ -1,5 +1,5 @@
 # Ionic Test API
-An app built on cordova Ionic v1 that serves up API data from https://jsonplaceholder.typicode.com. Complete with Jasmine Karma and Protactor tests.
+An app built on Cordova Ionic v1 and serves up API data from https://jsonplaceholder.typicode.com. Complete with Jasmine Karma and Protractor tests.
 
 ## Getting started
 Install the following:
@@ -12,7 +12,7 @@ Install the following:
 ## To Run app
 Download the repo and inside the repo run
 `npm install`
-`gulp watch`
+`ionic serve`
 
 ## To run tests
 `gulp karma` for front end unit tests with jasmine

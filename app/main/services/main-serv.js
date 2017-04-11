@@ -1,36 +1,24 @@
 'use strict';
 angular.module('main')
 .service('Main', function ($log, $timeout, $http) {
-  var apiPath = 'https://jsonplaceholder.typicode.com/posts';
+  var apiPath = '/posts';
 
   this.getListData = function (callback) {
+    var dataUrl = apiPath;
 
-    $http.jsonp(apiPath + '?callback=JSON_CALLBACK')
+    $http.get(dataUrl)
     .success(function (response) {
       callback(response);
     })
     .error(function (err) {
-      throw Error('JSONP ERROR!', err);
+      throw Error('ERROR!', err);
     });
   };
-
-  // TODO: Implement proxy server to remove CORS
-  // this.getListData = function (callback) {
-  //   var dataUrl = '/posts';
-  //
-  //   $http.get(dataUrl)
-  //   .success(function (response) {
-  //     callback(response);
-  //   })
-  //   .error(function (err) {
-  //     throw Error('ERROR!', err);
-  //   });
-  // };
 
   this.getItemData = function (id, callback) {
     var dataUrl = apiPath + '/' + id;
 
-    $http.jsonp(dataUrl + '?callback=JSON_CALLBACK')
+    $http.get(dataUrl)
     .success(function (response) {
       callback(response);
     })
